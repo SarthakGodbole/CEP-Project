@@ -1,13 +1,159 @@
+/* Natural Farming - Global Base Styles */
+:root {
+  /* Color Palette - Natural Farming Theme */
+  --primary-green: #2e7d32;
+  --primary-green-light: #388e3c;
+  --primary-green-dark: #1b5e20;
+  --secondary-green: #66bb6a;
+  --accent-green: #81c784;
+  --bg-light: #f5f9f5;
+  --bg-white: #ffffff;
+  --text-primary: #2d4a2b;
+  --text-secondary: #5d6d5b;
+  --border-light: #c8e6c9;
+  --shadow-sm: 0 2px 8px rgba(46, 125, 50, 0.08);
+  --shadow-md: 0 4px 16px rgba(46, 125, 50, 0.12);
+  --shadow-lg: 0 8px 24px rgba(46, 125, 50, 0.16);
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-light);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  background: #f4f4f4;
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9em;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f8f4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #66bb6a;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #388e3c;
+}
+
+/* Selection */
+::selection {
+  background: #81c784;
+  color: white;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 3px solid #66bb6a;
+  outline-offset: 2px;
+}
+
+/* Responsive Typography */
+h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+p {
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  line-height: 1.6;
+}
+
+/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utility Classes */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-1 { margin-top: var(--spacing-md); }
+.mt-2 { margin-top: var(--spacing-lg); }
+.mb-1 { margin-bottom: var(--spacing-md); }
+.mb-2 { margin-bottom: var(--spacing-lg); }
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+  
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
 }
